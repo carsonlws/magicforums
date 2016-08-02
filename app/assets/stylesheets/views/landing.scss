@@ -16,8 +16,8 @@
 
 
 .background-2 {
-  background-color: lightskyblue;
-  height: 50vh;
+  background-color: orange;
+  height: 40vh;
   width: 100%;
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -26,6 +26,9 @@
   align-items: center;
   justify-content: center;
 }
+
+
+
 
 // section 2
 
@@ -44,17 +47,20 @@
 }
 
 .feature-title {
-  color: orange;
+  color: black;
+  font-family: Bree Serif;
 }
 
 .feature {
   flex: 0 0 280px;
-  margin: 20px 10px;
+  margin: 10px 10px;
   // background: yellow;
 }
 
 .icon-settings {
   margin: 20px 0;
+  color: orange;
+
 }
 
 
@@ -136,17 +142,24 @@
 
 .short-underline {
   width: 50px;
-  border-bottom: 2px solid orange;
+  border-bottom: 2px
+  solid orange;
 }
+
+// .footer-container {
+//     max-width: 600px;
+//     margin: 0 auto;
+//     justify-content: center;
+//     display: flex;
+//     flex-wrap: wrap;
+// }
 
 .footer {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.feature-title {
-  color: black;
+  // color: black;
+  // justify-content: center;
+  max-width: 600px;
+  margin: 0 auto;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
 }
