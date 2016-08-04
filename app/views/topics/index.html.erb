@@ -1,0 +1,20 @@
+<div class="topics">
+
+
+    <div class="topics-title text-center">
+      <h1 style= "color:white; font-size:50px"> Dicussion Forum </h1>
+    </div>
+
+    <div class="topics-parent text-center">
+
+      <% @topics.each do |topic| %>
+        <div class="topics-child">
+          <h3><%= link_to topic.title, topic_path(topic) %></h3>
+          <h5><%= topic.description %></h5>
+        </div>
+      <% end %>
+    </div>
+
+
+
+  </div>

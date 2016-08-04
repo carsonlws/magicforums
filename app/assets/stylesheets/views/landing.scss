@@ -1,165 +1,167 @@
+.landing {
+
+  .background {
+        background-image: asset-url("polabear.jpeg");
+        height: 100vh;
+        width: 100%;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: calc(100vh - 52px);
+      }
+
+
+  .background-2 {
+    background-color: orange;
+    height: 40vh;
+    width: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
 
 
-.background {
-      background-image: asset-url("polabear.jpeg");
-      height: 100vh;
-      width: 100%;
-      background-position: 50% 50%;
-      background-repeat: no-repeat;
-      background-size: cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: calc(100vh - 52px);
+
+  // section 2
+
+  .features-container {
+    margin: 50px 0;
+    // background: salmon;
+  }
+
+  .features {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 50px auto;
+    justify-content: center;
+    // background: olive;
+  }
+
+  .feature-title {
+    color: black;
+    font-family: Bree Serif;
+  }
+
+  .feature {
+    flex: 0 0 280px;
+    margin: 10px 10px;
+    // background: yellow;
+  }
+
+  .icon-settings {
+    margin: 20px 0;
+    color: orange;
+
+  }
+
+
+  // code for 4 images
+
+  .features-image {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    // background: olive;
+  }
+
+  .image-settings {
+    width: 100%;
+    padding: 0;
+  }
+
+
+
+  // hover text
+
+  // .portfolio {
+  //   width: 100%;
+  //   display: flex;
+  //   flex-wrap: wrap;
+  //   justify-content: center;
+  //
+  // }
+
+
+  .photo:hover .invisible-layout {
+    opacity: 1;
+    transition: all 0.6s ease-in-out;
+  }
+
+  .invisible-layout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+  }
+
+  .content-hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: yellow;
+    opacity: 0.5;
+  }
+
+  .photo {
+    flex: 0 0 25%;
+    position: relative;
+  }
+
+  @media all and (max-width: 1199px) {
+    .features {
+      max-width: 600px;
     }
 
+    .photo {
+      flex: 0 0 50%;
+    }
+  }
 
-.background-2 {
-  background-color: orange;
-  height: 40vh;
-  width: 100%;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  @media all and (max-width: 600px) {
+    .photo {
+      flex: 0 0 100%;
+    }
+  }
 
 
+  // last section = my contact info
 
+  .short-underline {
+    width: 50px;
+    border-bottom: 2px
+    solid orange;
+  }
 
-// section 2
+  // .footer-container {
+  //     max-width: 600px;
+  //     margin: 0 auto;
+  //     justify-content: center;
+  //     display: flex;
+  //     flex-wrap: wrap;
+  // }
 
-.features-container {
-  margin: 50px 0;
-  // background: salmon;
-}
-
-.features {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 50px auto;
-  justify-content: center;
-  // background: olive;
-}
-
-.feature-title {
-  color: black;
-  font-family: Bree Serif;
-}
-
-.feature {
-  flex: 0 0 280px;
-  margin: 10px 10px;
-  // background: yellow;
-}
-
-.icon-settings {
-  margin: 20px 0;
-  color: orange;
-
-}
-
-
-// code for 4 images
-
-.features-image {
-  display: flex;
-  width: 100%;
-  flex-wrap: wrap;
-  justify-content: center;
-  // background: olive;
-}
-
-.image-settings {
-  width: 100%;
-  padding: 0;
-}
-
-
-
-// hover text
-
-// .portfolio {
-//   width: 100%;
-//   display: flex;
-//   flex-wrap: wrap;
-//   justify-content: center;
-//
-// }
-
-
-.photo:hover .invisible-layout {
-  opacity: 1;
-  transition: all 0.6s ease-in-out;
-}
-
-.invisible-layout {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-}
-
-.content-hover {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  background-color: yellow;
-  opacity: 0.5;
-}
-
-.photo {
-  flex: 0 0 25%;
-  position: relative;
-}
-
-@media all and (max-width: 1199px) {
-  .features {
+  .footer {
+    // color: black;
+    // justify-content: center;
     max-width: 600px;
+    margin: 0 auto;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
   }
 
-  .photo {
-    flex: 0 0 50%;
-  }
-}
 
-@media all and (max-width: 600px) {
-  .photo {
-    flex: 0 0 100%;
-  }
-}
-
-
-// last section = my contact info
-
-.short-underline {
-  width: 50px;
-  border-bottom: 2px
-  solid orange;
-}
-
-// .footer-container {
-//     max-width: 600px;
-//     margin: 0 auto;
-//     justify-content: center;
-//     display: flex;
-//     flex-wrap: wrap;
-// }
-
-.footer {
-  // color: black;
-  // justify-content: center;
-  max-width: 600px;
-  margin: 0 auto;
-  justify-content: center;
-  display: flex;
-  flex-wrap: wrap;
 }
