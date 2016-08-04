@@ -1,0 +1,23 @@
+
+
+<div class="topics">
+
+
+    <div class="topics-title text-center">
+      <h1 style= "color:white; font-size:50px"> Create Topic </h1>
+    </div>
+
+    <div class="topics-parent text-center">
+        <div class="topics-child">
+
+
+    <h1><%= @topic.title %></h1>
+    <p><%= @topic.description %></p>
+
+    <div class="buttondelete">
+    <%= link_to "Delete", topic_path(@topic), method: :delete, data: { confirm: "Delete?" } %>
+    </div>
+
+
+  </div>
+</div>

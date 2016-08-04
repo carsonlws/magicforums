@@ -1,0 +1,47 @@
+.posts {
+
+
+.posts-title {
+      background-image: asset-url("rhino_posts.jpeg");
+      height: 30vh;
+      width: 100%;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+
+.posts-parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 30px;
+}
+
+.posts-child {
+  flex: 0 0 400px;
+  // flex: 50% 50%;
+  border: 4px solid teal;
+  padding: 20px;
+  margin: 5px;
+  background-color: lightgrey;
+}
+
+// .posts-background {
+//       background-image: asset-url("polabear.jpeg");
+//       height: 100vh;
+//       width: 100%;
+//       background-position: 50% 50%;
+//       background-repeat: no-repeat;
+//       background-size: cover;
+//       // display: flex;
+//       align-items: center;
+//       justify-content: center;
+//       // height: calc(100vh - 52px);
+//     }
+
+}

@@ -1,20 +1,5 @@
 .topics {
 
-  // full bg with dscription
-    // .topics-parent {
-    //       background-image: asset-url("tiger.jpeg");
-    //       height: 100vh;
-    //       width: 100%;
-    //       background-position: 50% 50%;
-    //       background-repeat: no-repeat;
-    //       background-size: cover;
-    //       display: flex;
-    //       flex-wrap: wrap;
-    //       align-items: center;
-    //       justify-content: center;
-    //       // height: calc(100vh - 52px);
-    //     }
-
 
 .topics-title {
       background-image: asset-url("tiger_topics.jpeg");
@@ -34,15 +19,18 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin: 80px;;
+  margin: 30px;
 }
 
 .topics-child {
-  flex: 0 0 400px;
-  // flex: 50% 50%;
-  border: 4px solid teal;
+  // flex: 0 0 400px;
+  flex: 50% 50%;
+  border: 5px solid orange;
   padding: 20px;
   margin: 5px;
+  width: 100%;
 }
+
+
 
 }

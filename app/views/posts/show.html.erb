@@ -1,0 +1,20 @@
+<div class="posts">
+
+  <div class="posts-title text-center">
+    <h1 style= "color:white; font-size:50px"> Edit Post </h1>
+  </div>
+
+  <div class="posts-parent text-center">
+    <div class="posts-child">
+
+
+    <h1><%= @post.title %></h1>
+    <p><%= @post.body %></p>
+
+    <div class="buttondelete">
+    <%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Delete?" } %>
+    </div>
+
+
+  </div>
+</div>
