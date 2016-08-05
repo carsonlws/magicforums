@@ -7,7 +7,7 @@
   <div class="posts-parent text-center">
     <div class="posts-child">
 
-    <%= form_for(@post, url: post_path(@post), html: { id: "post-update-form" }) do |f| %>
+    <%= form_for(@post, url: topic_post_path(@topic, @post), html: { id: "post-update-form" }) do |f| %>
       <h1 class="text-center">
         Edit Post
       </h1>

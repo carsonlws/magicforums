@@ -10,12 +10,17 @@
 
     <% @posts.each do |post| %>
       <div class="posts-child">
-        <h3><%= link_to post.title, post_path(post) %></h3>
+        <h3><%= link_to post.title, topic_posts_path(post) %></h3>
         <h5><%= post.body %></h5>
-        <%= link_to ('Edit'), edit_post_path(post), :class => 'btn btn-primary btn-lg' %>
-        <%= link_to ('Delete'), post_path(post), method: :delete, data: { confirm: "Delete?" }, :class => 'btn btn-primary btn-lg'%>
+        <%= link_to ('Edit'), edit_topic_post_path(@topic, post), :class => 'btn btn-primary btn-lg' %>
+        <%= link_to ('Delete'), topic_post_path(@topic, post), method: :delete, data: { confirm: "Delete?" }, :class => 'btn btn-primary btn-lg'%>
       </div>
     <% end %>
     </div>
+
+    <div class="newbutton text-center">
+      <%= link_to t('New Post'), new_topic_post_path, :class => 'btn btn-primary btn-lg' %>
+    </div>
+
 
 </div>

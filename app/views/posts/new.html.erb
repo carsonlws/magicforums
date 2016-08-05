@@ -1,4 +1,4 @@
-<%= form_for(@post, url: posts_path, html: { id: "post-create-form" }) do |f| %>
+<%= form_for(@post, url: topic_posts_path(@topic, @post), html: { id: "post-create-form" }) do |f| %>
   <h1 class="text-center">
     Create Post
   </h1>
