@@ -10,10 +10,14 @@
 
     <% @posts.each do |post| %>
       <div class="posts-child">
-        <h3><%= link_to post.title, topic_posts_path(post) %></h3>
+        <!-- # to show image in the index page also -->
+        <% if post.image? %>
+          <%= image_tag post.image, class: "img-settings img-responsive center-block " %>
+        <% end %>
+        <h3><%= link_to post.title, topic_post_comments_path(@topic, post), :class =>"linkcolor" %></h3>
         <h5><%= post.body %></h5>
-        <%= link_to ('Edit'), edit_topic_post_path(@topic, post), :class => 'btn btn-primary btn-lg' %>
-        <%= link_to ('Delete'), topic_post_path(@topic, post), method: :delete, data: { confirm: "Delete?" }, :class => 'btn btn-primary btn-lg'%>
+        <%= link_to ('Edit'), edit_topic_post_path(@topic, post), :class => 'btn btn-primary btn-md' %>
+        <%= link_to ('Delete'), topic_post_path(@topic, post), method: :delete, data: { confirm: "Delete?" }, :class => 'btn btn-primary btn-md'%>
       </div>
     <% end %>
     </div>

@@ -1,19 +1,48 @@
-<%= form_for(@post, url: topic_posts_path(@topic, @post), html: { id: "post-create-form" }) do |f| %>
-  <h1 class="text-center">
-    Create Post
-  </h1>
+<div class="comments">
 
-  <div class="form-group">
-    <h4> <%= f.label :title_field, "Title" %> </h4>
-    <%= f.text_field :title, required: true, id: "post_title_field", class: 'form-control' %>
-  </div>
 
-  <div class="form-group">
-    <h4> <%= f.label :text_field, "Body" %> </h4>
-    <%= f.text_field :body, id: "post_body_field", class: 'form-control' %>
-  </div>
+    <div class="comments-title text-center">
+      <h1 style= "color:white; font-size:50px"> Create Topic </h1>
+    </div>
 
-  <div class="form-group text-center">
-    <%= f.submit "Create Post", class: "btn btn-success btn-lg" %>
+    <div class="comments-parent text-center">
+        <div class="comments-child">
+
+
+
+    <%= form_for(@post, url: topic_posts_path(@topic, @post), html: { id: "post-create-form" }) do |f| %>
+      <h1 class="text-center">
+        Create Post
+      </h1>
+
+      <div class="form-group">
+          <h4 class="text-center"> Post Image </h4>
+          <div id="preview-image">
+            <% if @post.image? %>
+              <%= image_tag @post.image, class: "img-settings img-responsive center-block" %>
+            <% end %>
+          </div>
+        </div>
+
+      <div class="form-group">
+        <%= f.file_field :image, id: "post_image_field", class: 'form-control image-uploader' %>
+      </div>
+
+
+      <div class="form-group">
+        <h4> <%= f.label :title_field, "Title" %> </h4>
+        <%= f.text_field :title, required: true, id: "post_title_field", class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <h4> <%= f.label :text_field, "Body" %> </h4>
+        <%= f.text_field :body, id: "post_body_field", class: 'form-control' %>
+      </div>
+
+      <div class="form-group text-center">
+        <%= f.submit "Create Post", class: "btn btn-success btn-lg" %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+  </div>
+  </div>

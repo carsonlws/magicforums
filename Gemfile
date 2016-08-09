@@ -32,6 +32,11 @@ group :production do
 end
 
 gem "font-awesome-rails"
+gem 'carrierwave'
+gem "mini_magick"
+gem "figaro"
+
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

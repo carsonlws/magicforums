@@ -14,9 +14,11 @@ class TopicsController < ApplicationController
     @topic = Topic.new(topic_params)
 
     if @topic.save
+      flash[:success] = "You've created a new topic."
       redirect_to topics_path
     else
-      render new_topic_path
+      flash[:danger] = @topic.errors.full_messages
+      redirect_to new_topic_path
     end
   end
 

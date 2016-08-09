@@ -1,0 +1,26 @@
+<div class="comments">
+
+  <div class="comments-title text-center">
+    <h1 style= "color:white; font-size:50px"> Comments </h1>
+  </div>
+
+
+  <!-- <div class="posts-background text-center"> -->
+    <div class="comments-parent text-center">
+
+    <% @comments.each do |comment| %>
+      <div class="comments-child">
+        <!-- <h3><%= link_to comment.body, topic_post_comments_path(@topic, @post, comment) %></h3> -->
+        <h3><%= comment.body %></h3>
+        <%= link_to ('Edit'), edit_topic_post_comment_path(@topic, @post, comment), :class => 'btn btn-primary btn-md' %>
+        <%= link_to ('Delete'), topic_post_comment_path(@topic, @post, comment), method: :delete, data: { confirm: "Delete?" }, :class => 'btn btn-primary btn-md'%>
+      </div>
+    <% end %>
+    </div>
+
+    <div class="newbutton text-center">
+      <%= link_to t('New Comment'), new_topic_post_comment_path, :class => 'btn btn-primary btn-lg' %>
+    </div>
+
+
+</div>
