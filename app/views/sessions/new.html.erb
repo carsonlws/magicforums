@@ -1,0 +1,31 @@
+<div class="sessions">
+
+  <div class="sessions-title text-center">
+    <h1 style= "color:white; font-size:50px"> New User </h1>
+  </div>
+
+  <div class="sessions-parent text-center">
+    <div class="sessions-child">
+
+    <%= form_tag sessions_path do %>
+      <h1 class="text-center">
+        Login
+      </h1>
+
+      <div class="form-group">
+        <h4> <%= label_tag :email %> </h4>
+        <%= text_field_tag :email, params[:email], required: true, id: "user_field", class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <h4> <%= label_tag :password %> </h4>
+        <%= password_field_tag :password, id: "password_field", class: 'form-control' %>
+      </div>
+
+      <div class="form-group text-center">
+        <%= submit_tag "Login", class: "btn btn-success btn-lg" %>
+      </div>
+    <% end %>
+
+  </div>
+</div>
