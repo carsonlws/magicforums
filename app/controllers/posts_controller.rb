@@ -1,9 +1,10 @@
 class PostsController < ApplicationController
 
+  before_action :authenticate!, only: [:create, :edit, :update, :new, :destroy]
+
   def index
     @topic = Topic.includes(:posts).find_by(id: params[:topic_id])
     @posts = @topic.posts.order("created_at DESC")
-
   end
 
   def new
@@ -13,7 +14,7 @@ class PostsController < ApplicationController
 
   def create
     @topic = Topic.find_by(id: params[:topic_id])
-    @post = Post.new(post_params.merge(topic_id: params[:topic_id]))
+    @post = current_user.posts.build(post_params.merge(topic_id: params[:topic_id]))
 
     if @post.save
       flash[:success] = "You've created a new post."
@@ -27,6 +28,7 @@ class PostsController < ApplicationController
   def edit
      @post = Post.find_by(id: params[:id])
      @topic = @post.topic
+     authorize @post
   end
 
   def update
@@ -43,6 +45,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find_by(id: params[:id])
     @topic = @post.topic
+    authorize @post
     # find the post by post id, assign the post back to id
 
     if @post.destroy

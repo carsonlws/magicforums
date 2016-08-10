@@ -31,10 +31,17 @@ group :production do
   gem 'rails_12factor'
 end
 
+group :development do
+  gem 'letter_opener'
+end
+
+gem "fog"
 gem "font-awesome-rails"
 gem 'carrierwave'
 gem "mini_magick"
 gem "figaro"
+gem "pundit"
+
 
 
 

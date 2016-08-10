@@ -7,7 +7,7 @@ def new
 end
 
 def edit
-  @user = User.find_by(id:params[:id])
+  @user = User.find_by(id: params[:id])
 end
 
 def create
@@ -25,12 +25,11 @@ end
 
 def update
   @user = User.find_by(id: params[:id])
-
-  # if @user.update(user_params)
-  #   redirect_to users_path
-  # else
-  #   redirect_to edit_user_path(@user)
-  # end
+  if @user.update(user_params)
+    redirect_to users_path
+  else
+    redirect_to edit_user_path(@user)
+  end
 end
 
 

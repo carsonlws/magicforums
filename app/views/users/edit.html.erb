@@ -1,15 +1,12 @@
 <div class="users">
 
-  <div class="users-title text-center">
-    <h1 style= "color:white; font-size:50px"> Edit Post </h1>
-  </div>
 
   <div class="users-parent text-center">
     <div class="users-child">
 
-    <%= form_for(@user, url: users_path(@user), html: { id: "user-update-form" }) do |f| %>
+    <%= form_for(@user, url: user_path(@user), html: { id: "user-update-form" }) do |f| %>
       <h1 class="text-center">
-        Edit Post
+        Edit User
       </h1>
 
       <div class="form-group">
@@ -24,12 +21,12 @@
 
       <div class="form-group">
         <h4> <%= f.label :text_field, "Password" %> </h4>
-        <%= f.text_field :password, required: true, id: "password_field", class: 'form-control' %>
+        <%= f.password_field :password, required: true, id: "password_field", class: 'form-control' %>
       </div>
 
       <div class="form-group">
         <h4> <%= f.label :text_field, "Password Confirmation" %> </h4>
-        <%= f.text_field :password, required: true, id: "password_field", class: 'form-control' %>
+        <%= f.password_field :password_confirmation, required: true, id: "password_field", class: 'form-control' %>
       </div>
 
       <div class="form-group text-center">

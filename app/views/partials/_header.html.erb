@@ -17,8 +17,27 @@
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to "About", about_path %></li>
           <li><%= link_to "Topics", topics_path %></li>
-          <li><%= link_to "Register", new_user_path %></li>
-          <li><%= link_to "Login", new_session_path %></li>
+          <% if current_user %>
+              <li>
+                <%= link_to current_user.username, edit_user_path(current_user), class: 'white shadowed link-styling' %>
+              </li>
+
+              <li>
+                <%= link_to "Logout", session_path(current_user), method: :delete, class: 'white shadowed link-styling' %>
+              </li>
+
+            <% else %>
+
+              <li>
+                <%= link_to "Register", new_user_path, class: 'white shadowed link-styling' %>
+              </li>
+
+              <li>
+                <%= link_to "Login", new_session_path, class: 'white shadowed link-styling' %>
+              </li>
+            <% end %>
+
+
 <!-- <li><a href="#">Topics<span class="sr-only">(current)</span></a></li>
           <li><a href="#">Log In<span class="sr-only">(current)</span></a></li> -->
         </ul>

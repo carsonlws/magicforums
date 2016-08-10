@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get :about, to: 'static_pages#about'
   resources :users, only: [:new, :edit, :create, :update]
   resources :sessions, only: [:new, :create, :destroy]
+  resources :password_resets, only: [:new, :create, :edit, :update]
 
   resources :topics, except: [:show] do
     resources :posts, except: [:show] do
