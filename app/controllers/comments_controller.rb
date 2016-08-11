@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
-
-  before_action :authenticate!, only: [:create, :edit, :update, :new, :destroy]
+  respond_to :js
+  before_action :authenticate!, only: [:index]
 
   def index
     @post = Post.includes(:comments).find_by(id: params[:post_id])
@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find_by(id: params[:post_id])
     @topic = @post.topic
-    @comment = Comment.new(comment_params.merge(post_id: params[:post_id]))
+    @comment = current_user.comments.build(comment_params.merge(post_id: params[:post_id]))
 
     if @comment.save
       redirect_to topic_post_comments_path(@topic, @post)
@@ -32,6 +32,7 @@ class CommentsController < ApplicationController
     @post = Post.find_by(id: params[:post_id])
     @topic = @post.topic
     @comment = Comment.find_by(id: params[:id])
+    authorize @comment
   end
 
   def update
@@ -50,6 +51,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find_by(id: params[:id])
     @post = @comment.post
     @topic = @comment.post.topic
+    authorize @comment
 
     if @comment.destroy
       redirect_to topic_post_comments_path(@topic, @post)
@@ -58,9 +60,9 @@ class CommentsController < ApplicationController
 
   private
 
-    def comment_params
-      params.require(:comment).permit(:title, :body, :image)
-    end
+  def comment_params
+    params.require(:comment).permit(:title, :body, :image)
+  end
 
 
 end

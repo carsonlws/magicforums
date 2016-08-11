@@ -35,20 +35,19 @@ class PasswordResetsController < ApplicationController
     end
 
     private
+      def reset_password_params
+        params.require(:reset).permit(:email)
+      end
 
-    def reset_password_params
-      params.require(:reset).permit(:email)
-    end
+      def user_params
+        params.require(:user).permit(:password)
+      end
 
-    def user_params
-      params.require(:user).permit(:password)
-    end
+      def password_token
+        SecureRandom.urlsafe_base64
+      end
 
-    def password_token
-      SecureRandom.urlsafe_base64
-    end
-
-    def token_active?
-      (Time.now - @user.password_reset_at) < 24.hours
-    end
+      def token_active?
+        (Time.now - @user.password_reset_at) < 24.hours
+      end
   end

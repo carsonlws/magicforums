@@ -15,7 +15,6 @@ class SessionsController < ApplicationController
         flash[:danger] = "Error logging in"
         render :new
       end
-
     end
 
     def destroy

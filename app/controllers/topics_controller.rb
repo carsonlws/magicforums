@@ -54,5 +54,4 @@ class TopicsController < ApplicationController
       params.require(:topic).permit(:title, :description)
     end
 
-
-  end
+end

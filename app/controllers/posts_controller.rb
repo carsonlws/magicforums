@@ -59,5 +59,4 @@ class PostsController < ApplicationController
       params.require(:post).permit(:title, :body, :image)
     end
 
-
 end
