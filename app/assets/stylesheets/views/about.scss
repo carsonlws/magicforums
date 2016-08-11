@@ -2,53 +2,52 @@
 
 // full bg with dscription
   .about-parent {
-        background-image: asset-url("leopard.jpeg");
-        height: 100vh;
-        width: 100%;
-        background-position: 50% 50%;
-        background-repeat: no-repeat;
-        background-size: cover;
-        display: flex;
-        flex-wrap: wrap;
-        // flex: 0 0 250px;
-        align-items: center;
-        justify-content: center;
-        height: calc(100vh - 52px);
-      }
+    background-image: asset-url("leopard.jpeg");
+    height: 100vh;
+    width: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
+    // flex: 0 0 250px;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 52px);
+  }
 
-      .short-underline {
-        width: 50px;
-        border-bottom: 2px solid orange;
-      }
+  .short-underline {
+    width: 50px;
+    border-bottom: 2px solid orange;
+  }
 
-      .about-child {
-        color: white;
-        max-width: 600px;
-      }
+  .about-child {
+    color: white;
+    max-width: 600px;
+  }
 
-      .icon-settings {
-        margin: 20px 0;
-        color: white;
-        margin: 0 auto;
-      }
+  .icon-settings {
+    margin: 20px 0;
+    color: white;
+    margin: 0 auto;
+  }
 
 // portfolio section
 
-      .portfolio-child{
-        // margin: auto;
-      }
+  .portfolio-child{
+    // margin: auto;
+  }
 
-      .feature-title {
-        margin: 20px 0;
-        color: black;
-        font-family: Bree Serif;
-      }
+  .feature-title {
+    margin: 20px 0;
+    color: black;
+    font-family: Bree Serif;
+  }
 
-      .image-settings {
-        width: 10%;
-        height: 10%;
-        align-items: center;
-        justify-content: center;
-      }
-
+  .image-settings {
+    width: 10%;
+    height: 10%;
+    align-items: center;
+    justify-content: center;
+  }
 }

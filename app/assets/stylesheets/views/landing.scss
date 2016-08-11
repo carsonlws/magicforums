@@ -1,18 +1,17 @@
 .landing {
 
   .background {
-        background-image: asset-url("polabear.jpeg");
-        height: 100vh;
-        width: 100%;
-        background-position: 50% 50%;
-        background-repeat: no-repeat;
-        background-size: cover;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: calc(100vh - 52px);
-      }
-
+    background-image: asset-url("polabear.jpeg");
+    height: 100vh;
+    width: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 52px);
+  }
 
   .background-2 {
     background-color: orange;
@@ -26,14 +25,10 @@
     justify-content: center;
   }
 
-
-
-
   // section 2
 
   .features-container {
     margin: 50px 0;
-    // background: salmon;
   }
 
   .features {
@@ -42,7 +37,6 @@
     max-width: 1200px;
     margin: 50px auto;
     justify-content: center;
-    // background: olive;
   }
 
   .feature-title {
@@ -53,7 +47,6 @@
   .feature {
     flex: 0 0 280px;
     margin: 10px 10px;
-    // background: yellow;
   }
 
   .icon-settings {
@@ -62,7 +55,6 @@
 
   }
 
-
   // code for 4 images
 
   .features-image {
@@ -70,26 +62,12 @@
     width: 100%;
     flex-wrap: wrap;
     justify-content: center;
-    // background: olive;
   }
 
   .image-settings {
     width: 100%;
     padding: 0;
   }
-
-
-
-  // hover text
-
-  // .portfolio {
-  //   width: 100%;
-  //   display: flex;
-  //   flex-wrap: wrap;
-  //   justify-content: center;
-  //
-  // }
-
 
   .photo:hover .invisible-layout {
     opacity: 1;
@@ -120,6 +98,22 @@
     position: relative;
   }
 
+  // last section = my contact info
+
+  .short-underline {
+    width: 50px;
+    border-bottom: 2px
+    solid orange;
+  }
+
+  .footer {
+    max-width: 600px;
+    margin: 0 auto;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   @media all and (max-width: 1199px) {
     .features {
       max-width: 600px;
@@ -135,33 +129,4 @@
       flex: 0 0 100%;
     }
   }
-
-
-  // last section = my contact info
-
-  .short-underline {
-    width: 50px;
-    border-bottom: 2px
-    solid orange;
-  }
-
-  // .footer-container {
-  //     max-width: 600px;
-  //     margin: 0 auto;
-  //     justify-content: center;
-  //     display: flex;
-  //     flex-wrap: wrap;
-  // }
-
-  .footer {
-    // color: black;
-    // justify-content: center;
-    max-width: 600px;
-    margin: 0 auto;
-    justify-content: center;
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-
 }

@@ -1,39 +1,34 @@
 .topics {
+  .topics-title {
+    background-image: asset-url("tiger_topics.jpeg");
+    height: 30vh;
+    width: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
 
+  .topics-parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 30px;
+  }
 
-.topics-title {
-      background-image: asset-url("tiger_topics.jpeg");
-      height: 30vh;
-      width: 100%;
-      background-position: 50% 50%;
-      background-repeat: no-repeat;
-      background-size: cover;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-    }
+  .topics-child {
+    flex: 50% 50%;
+    border: 3px solid orange;
+    padding: 20px;
+    margin: 5px;
+    width: 100%;
+  }
 
-.topics-parent {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin: 30px;
-}
-
-.topics-child {
-  // flex: 0 0 400px;
-  flex: 50% 50%;
-  border: 3px solid orange;
-  padding: 20px;
-  margin: 5px;
-  width: 100%;
-}
-
-.title-link-color {
-  color: orange;
-}
-
-
+  .title-link-color {
+    color: orange;
+  }
 }
