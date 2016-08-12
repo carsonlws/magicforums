@@ -6,11 +6,6 @@ class CommentsController < ApplicationController
     @post = Post.includes(:comments).find_by(id: params[:post_id])
     @topic = @post.topic
     @comments = @post.comments.order("created_at DESC")
-  end
-
-  def new
-    @post = Post.find_by(id: params[:post_id])
-    @topic = @post.topic
     @comment = Comment.new
   end
 
@@ -18,13 +13,12 @@ class CommentsController < ApplicationController
     @post = Post.find_by(id: params[:post_id])
     @topic = @post.topic
     @comment = current_user.comments.build(comment_params.merge(post_id: params[:post_id]))
+    @new_comment = Comment.new
 
     if @comment.save
-      redirect_to topic_post_comments_path(@topic, @post)
-      flash[:success] = "You've created a new topic."
+      flash.now[:success] = "Comment created"
     else
-      redirect_to new_topic_post_comment_path(@topic, @post)
-      flash[:danger] = @comment.errors.full_messages
+      flash.now[:danger] = @comment.errors.full_messages
     end
   end
 
@@ -54,6 +48,7 @@ class CommentsController < ApplicationController
     authorize @comment
 
     if @comment.destroy
+      flash.now[:success] = "Comment deleted"
       redirect_to topic_post_comments_path(@topic, @post)
     end
   end

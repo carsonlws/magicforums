@@ -1,0 +1,7 @@
+<div class="comments-child">
+    <!-- <h3><%= link_to comment.body, topic_post_comments_path(@topic, @post, comment) %></h3> -->
+    <h3><%= comment.body %></h3>
+    <%= image_tag comment.image, class: "img-settings img-responsive center-block" %>
+    <%= link_to ('Edit'), edit_topic_post_comment_path(@topic, @post, comment), :class => 'btn btn-primary btn-md' %>
+    <%= link_to ('Delete'), topic_post_comment_path(@topic, @post, comment), method: :delete, data: { confirm: "Delete?" }, :class => 'btn btn-primary btn-md'%>
+  </div>

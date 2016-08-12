@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/sr3d/remotipart.git
+  revision: 572f45d234a8d1ce4158609fe18bd54086fc5735
+  specs:
+    remotipart (1.2.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -350,6 +356,7 @@ DEPENDENCIES
   pundit
   rails (~> 5.0.0)
   rails_12factor
+  remotipart!
   responders
   sass-rails (~> 5.0)
   spring

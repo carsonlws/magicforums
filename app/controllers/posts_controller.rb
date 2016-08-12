@@ -49,6 +49,7 @@ class PostsController < ApplicationController
     # find the post by post id, assign the post back to id
 
     if @post.destroy
+      flash[:success] = "Post deleted"
       redirect_to topic_posts_path(@topic)
     end
   end
