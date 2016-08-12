@@ -4,7 +4,6 @@
     <h1 style= "color:white; font-size:50px"> Posts </h1>
   </div>
 
-
   <!-- <div class="posts-background text-center"> -->
     <div class="posts-parent text-center">
 
@@ -20,6 +19,7 @@
         <%= link_to ('Delete'), topic_post_path(@topic, post), method: :delete, data: { confirm: "Delete?" }, :class => 'btn btn-primary btn-md'%>
       </div>
     <% end %>
+    <%= paginate @posts %>
     </div>
 
     <div class="newbutton text-center">

@@ -7,13 +7,20 @@
     <div class="comments-parent text-center">
       <div id="comments">
         <% @comments.each do |comment| %>
-          <%= render partial: "comments", locals: { comment: comment, post: @post } %>
+        <div class="comments-child">
+          <%= render partial: "comments", locals: { comment: comment, post: @post, topic: @topic } %>
+        </div>
         <% end %>
-      </div>
+
+        <div class="comments-child2 text-center">
+          <%= paginate @comments %>
+        </div>
     </div>
+  </div>
+
 
   <div id="comments-form-container">
-    <%= render partial: "comments/create_form", locals: { comment: @comment, post: @post } %>
+    <%= render partial: "create_form", locals: { comment: @comment, post: @post } %>
   </div>
 
 

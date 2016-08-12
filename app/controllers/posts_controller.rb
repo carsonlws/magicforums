@@ -1,10 +1,11 @@
 class PostsController < ApplicationController
 
+  respond_to :js
   before_action :authenticate!, only: [:create, :edit, :update, :new, :destroy]
 
   def index
     @topic = Topic.includes(:posts).find_by(id: params[:topic_id])
-    @posts = @topic.posts.order("created_at DESC")
+    @posts = @topic.posts.order("created_at DESC").page(params[:page]).per(3)
   end
 
   def new
@@ -37,8 +38,10 @@ class PostsController < ApplicationController
 
     if @post.update(post_params)
       redirect_to topic_posts_path(@topic)
+      flash[:success] = "You've updated a post."
     else
       redirect_to edit_topic_post_path(@topic, @post)
+      flash[:danger] = @post.errors.full_messages
     end
   end
 

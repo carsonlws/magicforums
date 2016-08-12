@@ -16,8 +16,8 @@
           <%= link_to ('Delete'), topic_path(topic), method: :delete, data: { confirm: "Delete?" }, :class => 'btn btn-warning btn-md'%>
         </div>
       <% end %>
+      <%= paginate @topics %>
     </div>
-
 
     <div class="newbutton text-center">
       <%= link_to t('New Topic'), new_topic_path, :class => 'btn btn-primary btn-lg' %>

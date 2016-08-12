@@ -5,8 +5,9 @@ class CommentsController < ApplicationController
   def index
     @post = Post.includes(:comments).find_by(id: params[:post_id])
     @topic = @post.topic
-    @comments = @post.comments.order("created_at DESC")
+    @comments = @post.comments.order("created_at DESC").page(params[:page]).per(3)
     @comment = Comment.new
+
   end
 
   def create
@@ -33,11 +34,14 @@ class CommentsController < ApplicationController
     @post = Post.find_by(id: params[:post_id])
     @topic = @post.topic
     @comment = Comment.find_by(id: params[:id])
+    authorize @comment
 
     if @comment.update(comment_params)
-      redirect_to topic_post_comments_path(@topic, @post)
+      # redirect_to topic_post_comments_path(@topic, @post)
+      flash.now[:success] = "Comment updated"
     else
-      redirect_to edit_topic_post_comment_path(@topic, @post, @comment)
+      # redirect_to edit_topic_post_comment_path(@topic, @post, @comment)
+      flash.now[:danger] = @comment.errors.full_messages
     end
   end
 
