@@ -17,6 +17,7 @@ class CommentsController < ApplicationController
     @new_comment = Comment.new
 
     if @comment.save
+      CommentBroadcastJob.set(wait: 0.1.seconds).perform_later("create", @comment)
       flash.now[:success] = "Comment created"
     else
       flash.now[:danger] = @comment.errors.full_messages

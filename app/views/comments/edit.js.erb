@@ -1,1 +1,1 @@
-$('#comment-edit-form').html("<%=j render partial: 'edit_form', locals: { comment: @comment, post: @post, topic: @topic } %>")
+$('.comment[data-id=<%=@comment.id%>]').html("<%=j render partial: 'comments/edit_form', locals: { comment: @comment, post: @comment.post, extra_class: '' } %>")

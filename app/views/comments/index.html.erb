@@ -1,4 +1,4 @@
-<div class="comments">
+<div class="comments index">
 
   <div class="comments-title text-center">
     <h1 style= "color:white; font-size:50px"> Comments </h1>
@@ -7,25 +7,19 @@
     <div class="comments-parent text-center">
       <div id="comments">
         <% @comments.each do |comment| %>
-        <div class="comments-child">
-          <%= render partial: "comments", locals: { comment: comment, post: @post, topic: @topic } %>
-        </div>
+          <%= render partial: "comment", locals: { comment: comment, post: @post, topic: @topic, extra_class:'' } %>
         <% end %>
-
-        <div class="comments-child2 text-center">
-          <%= paginate @comments %>
-        </div>
     </div>
-  </div>
 
 
-  <div id="comments-form-container">
-    <%= render partial: "create_form", locals: { comment: @comment, post: @post } %>
-  </div>
+      </div>
 
+    <div id="comments-form-container">
+      <%= render partial: "create_form", locals: { comment: @comment, post: @post } %>
+    </div>
 
-    <!-- <div class="newbutton text-center">
-      <%= link_to t('New Comment'), new_topic_post_comment_path, :class => 'btn btn-primary btn-lg' %>
-    </div> -->
+    <div class="comments-child2 text-center">
+      <%= paginate @comments %>
+    </div>
 
 </div>
