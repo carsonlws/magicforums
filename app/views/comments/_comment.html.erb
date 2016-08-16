@@ -1,13 +1,10 @@
-<div class="comment comments-child <%=extra_class%>" data-id="<%=comment.id%>">
+<div class="comment comments-child" data-id="<%=comment.id%>">
     <h3><%= comment.body %></h3>
     <div class="control-panel">
-      <% if comment.user == current_user %>
-        <%= image_tag comment.image, class: "img-settings img-responsive center-block" %>
-        <%= link_to ('Edit'), edit_topic_post_comment_path(@topic, @post, comment), remote: true, class: 'btn btn-primary btn-md' %>
-        <% end %>
-
       <% if comment.user == current_user || current_user&.admin? || current_user&.moderator? %>
-        <%= link_to ('Delete'), topic_post_comment_path(@topic, @post, comment), method: :delete, remote: true, data: { confirm: "Delete?" }, class: 'btn btn-primary btn-md'%>
+        <%= image_tag comment.image, class: "img-settings img-responsive center-block" %>
+        <%= link_to ('Edit'), edit_topic_post_comment_path(post.topic, post, comment), remote: true, class: 'btn btn-primary btn-md' %>
+        <%= link_to ('Delete'), topic_post_comment_path(post.topic, post, comment), method: :delete, remote: true, data: { confirm: "Delete?" }, class: 'btn btn-primary btn-md'%>
       <% end %>
 
 </div>

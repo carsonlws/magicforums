@@ -1,6 +1,5 @@
 $('#flash-messages-container').html("<%=j render partial: 'partials/flash_messages' %>")
 
 <% if @comment.persisted? %>
-  $('#comments').append(" <%=j render partial: 'comment', locals: { comment: @comment, post: @comment.post, extra_class: '' } %>")
   $('#comments-form-container').html("<%=j render partial: 'create_form', locals: { comment: @new_comment, post: @post } %>")
 <% end %>
