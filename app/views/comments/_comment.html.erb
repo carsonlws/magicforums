@@ -1,11 +1,24 @@
 <div class="comment comments-child" data-id="<%=comment.id%>">
-    <h3><%= comment.body %></h3>
-    <div class="control-panel">
+  <h3><%= comment.body %></h3>
+  <div class="control-panel">
+    <% if comment.user == current_user || current_user&.admin? || current_user&.moderator? %>
+    <%= image_tag comment.image, class: "img-settings img-responsive center-block" %>
+    <%= link_to ('Edit'), edit_topic_post_comment_path(post.topic, post, comment), remote: true, class: 'btn btn-primary btn-md' %>
+    <%= link_to ('Delete'), topic_post_comment_path(post.topic, post, comment), method: :delete, remote: true, data: { confirm: "Delete?" }, class: 'btn btn-primary btn-md'%>
+    <% end %>
+  </div>
+    <div class="vote-button">
       <% if comment.user == current_user || current_user&.admin? || current_user&.moderator? %>
-        <%= image_tag comment.image, class: "img-settings img-responsive center-block" %>
-        <%= link_to ('Edit'), edit_topic_post_comment_path(post.topic, post, comment), remote: true, class: 'btn btn-primary btn-md' %>
-        <%= link_to ('Delete'), topic_post_comment_path(post.topic, post, comment), method: :delete, remote: true, data: { confirm: "Delete?" }, class: 'btn btn-primary btn-md'%>
+      <%= link_to upvote_path(comment_id: comment.id), method: :post do %>
+      <%= fa_icon "plus-circle 2x" %>
       <% end %>
 
-</div>
+      <%= link_to downvote_path(comment_id: comment.id), method: :post do %>
+      <%= fa_icon "minus-circle 2x" %>
+      <% end %>
+      <% end %>
+
+    </div>
+    Total Votes : <%= comment.total_votes %>
+
 </div>

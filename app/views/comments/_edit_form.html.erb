@@ -1,16 +1,16 @@
 <div class="comments-parent text-center">
   <div id="comment-update-form">
 
-  <%= form_for(comment, url: topic_post_comment_path(post.topic, post, comment), authenticity_token: true, remote: true, html: { id: "comment-edit-form", data: {id: @comment.id },multipart: true }) do |f| %>
+    <%= form_for(comment, url: topic_post_comment_path(post.topic, post, comment), authenticity_token: true, remote: true, html: { id: "comment-edit-form", data: {id: @comment.id },multipart: true }) do |f| %>
     <h1 class="text-center">
       Edit Comment
     </h1>
 
     <div class="form-group">
-    <h4 class="text-center"> Post Image </h4>
+      <h4 class="text-center"> Post Image </h4>
       <div id="preview-image">
         <% if @comment.image? %>
-          <%= image_tag @comment.image, class: "img-settings img-responsive center-block" %>
+        <%= image_tag @comment.image, class: "img-settings img-responsive center-block" %>
         <% end %>
       </div>
     </div>
@@ -26,8 +26,11 @@
 
     <div class="form-group text-center">
       <%= f.submit "Update Comment", class: "btn btn-success btn-lg", data: {id: @comment.id} %>
+      <div class="cancel-button btn btn-success btn-lg" data-id="<%= @comment.id %>">
+        Cancel
+      </div>
     </div>
-  <% end %>
+    <% end %>
 
   </div>
 </div>

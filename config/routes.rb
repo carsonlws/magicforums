@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :edit, :create, :update]
   resources :sessions, only: [:new, :create, :destroy]
   resources :password_resets, only: [:new, :create, :edit, :update]
+  post :upvote, to: 'votes#upvote'
+  post :downvote, to: 'votes#downvote'
 
   resources :topics, except: [:show] do
     resources :posts, except: [:show] do
@@ -15,8 +17,3 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
-
-#
-# resources :topics, except: [:show] do
-#   resources :posts, except: [:show] do
-#     resources :comments, except: [:show]
