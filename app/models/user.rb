@@ -4,6 +4,8 @@ class User < ApplicationRecord
   has_many :posts
   has_many :comments
   has_many :votes
+  extend FriendlyId
+  friendly_id :username, use: :slugged
 
   validates :email, uniqueness: true
   validate :email_regex
