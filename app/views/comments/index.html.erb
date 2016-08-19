@@ -10,10 +10,8 @@
           <% @comments.each do |comment| %>
             <%= render partial: "comment", locals: { comment: comment, post: @post, topic: @topic } %>
           <% end %>
-      </div>
-
-
         </div>
+      </div>
 
       <div id="comments-form-container">
         <%= render partial: "create_form", locals: { comment: @comment, post: @post } %>
@@ -23,5 +21,4 @@
         <%= paginate @comments %>
       </div>
   </div>
-
 </div>

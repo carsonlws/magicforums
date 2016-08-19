@@ -31,7 +31,7 @@ class TopicsController < ApplicationController
 
   def update
     @topic = Topic.friendly.find(params[:id])
-
+    flash[:success] = "You've edited a topic."
     if @topic.update(topic_params)
       redirect_to topics_path(@topic)
     else

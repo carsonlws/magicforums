@@ -1,24 +1,15 @@
-<div class="users">
+<div class="modal fade" id="register">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
 
-    <div class="users-title text-center">
-      <h1 style= "color:black; font-size:50px"> Create New User </h1>
-    </div>
-
-    <div class="modal fade" id="<your-modal-id>">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-body">
-
-      <div class="users-parent text-center">
-        <div class="users-child text-center">
-
-        <%= form_for(@user, url: users_path, html: { id: "user-create-form" }) do |f| %>
+        <%= form_for(:user, url: users_path, html: { id: "user-create-form" }) do |f| %>
+        <h1 class = "text-center"> Register Now </h1>
 
         <div class="form-group">
           <h4> <%= f.label :text_field, "Username" %> </h4>
           <%= f.text_field :username, required: true, id: "username_field", class: 'form-control' %>
         </div>
-
 
         <div class="form-group">
           <h4> <%= f.label :title_field, "Email" %> </h4>
@@ -37,13 +28,9 @@
 
         <div class="form-group text-center">
           <%= f.submit "Create User", class: "btn btn-success btn-lg" %>
-
         </div>
         <% end %>
-      </div>
       </div>
     </div>
   </div>
 </div>
-  </div>
-  </div>
