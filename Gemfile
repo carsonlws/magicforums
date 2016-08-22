@@ -54,7 +54,19 @@ gem 'friendly_id', '~> 5.1.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   # gem 'byebug', platform: :mri
+
   gem 'pry'
+  gem 'rspec-rails', '~> 3.5'
+  gem 'factory_girl_rails'
+  gem 'faker'
+end
+
+group :test do
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
+  gem 'rails-controller-testing'
+  gem 'capybara'
+  gem 'selenium-webdriver'
 end
 
 group :development do

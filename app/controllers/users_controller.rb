@@ -1,11 +1,14 @@
 class UsersController < ApplicationController
 
+before_action :authenticate!, only: [:edit, :update]
+
   def new
     @user = User.new
   end
 
   def edit
     @user = User.friendly.find(params[:id])
+    authorize @user
   end
 
   def create
@@ -23,6 +26,8 @@ class UsersController < ApplicationController
 
   def update
     @user = User.friendly.find(params[:id])
+    authorize @user
+
     if @user.update(user_params)
       redirect_to users_path
     else

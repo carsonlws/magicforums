@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 
     def current_user
       return unless session[:id]
-      @user ||= User.find_by(id: session[:id])
+      @current_user ||= User.find_by(id: session[:id])
     end
 
     def authenticate!
@@ -21,5 +21,6 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
       flash[:danger] = "You need to login first"
     end
+
   end
 end
