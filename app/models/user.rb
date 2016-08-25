@@ -7,8 +7,9 @@ class User < ApplicationRecord
 
   extend FriendlyId
   friendly_id :username, use: :slugged
+  validates :username, uniqueness: true, presence: true
 
-  validates :email, uniqueness: true
+  validates :email, uniqueness: true, presence: true
   validate :email_regex
 
   def email_regex
@@ -18,5 +19,13 @@ class User < ApplicationRecord
   end
 
   enum role: [:user, :moderator, :admin]
+
+  before_save :update_slug
+
+  def update_slug
+    if username
+      self.slug = username.gsub(" ", "-")
+    end
+  end
 
 end

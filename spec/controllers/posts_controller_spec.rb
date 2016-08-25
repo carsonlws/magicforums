@@ -4,8 +4,8 @@ RSpec.describe PostsController, type: :controller do
 
   before(:all) do
     @admin = create(:user, :admin)
-    @user = create(:user, :sequenced_email)
-    @unauthorized_user = create(:user, :sequenced_email)
+    @user = create(:user, :sequenced_email, :sequenced_username)
+    @unauthorized_user = create(:user, :sequenced_email, :sequenced_username)
     @topic = create(:topic)
     @post = create(:post, user_id: @user.id, topic_id: @topic.id)
   end
@@ -15,7 +15,7 @@ RSpec.describe PostsController, type: :controller do
     it "should render index" do
       params = { topic_id: @topic.id }
       get :index, params: params
-binding.pry
+
       expect(subject).to render_template(:index)
       expect(assigns[:posts].count).to eql(1)
     end

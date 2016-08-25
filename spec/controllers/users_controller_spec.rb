@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe UsersController, type: :controller do
 
   before(:all) do
-    @user = create(:user)
+    @user = create(:user, :sequenced_username, :sequenced_email)
     @unauthorized_user = create(:user, :sequenced_email)
   end
 

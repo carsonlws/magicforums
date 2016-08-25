@@ -10,5 +10,4 @@ class Comment < ApplicationRecord
     votes.pluck(:value).sum
   end
 
-
 end

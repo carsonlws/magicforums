@@ -4,7 +4,7 @@ RSpec.describe CommentsController, type: :controller do
 
   before(:all) do
     @admin = create(:user, :admin)
-    @user = create(:user, :sequenced_email)
+    @user = create(:user, :sequenced_email, :sequenced_username)
     @unauthorized_user = create(:user, :sequenced_email)
     @topic = create(:topic)
     @post = create(:post, user_id: @user.id, topic_id: @topic.id)
