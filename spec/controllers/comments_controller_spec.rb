@@ -3,12 +3,12 @@ require 'rails_helper'
 RSpec.describe CommentsController, type: :controller do
 
   before(:all) do
-    @admin = User.create({username: "Admin", email: "carson1@gmail.com", password: "password", role: "admin"})
-    @user = User.create({username: "User", email: "user@gmail.com", password: "password", role: "user"})
-    @unauthorized_user = User.create({username: "Pikachu", email: "pikachu@gmail.com", password: "password"})
-    @topic = Topic.create ({title: "Catch pokemon", description: "pikachu pikachu", user_id: @admin.id})
-    @post = Post.create ({title: "My Post New Title", body: "My New Post Body", user_id: @user.id, topic_id: @topic.id})
-    @comment = Comment.create ({body: "My New Comment Body", user_id: @user.id, post_id: @post.id})
+    @admin = create(:user, :admin)
+    @user = create(:user, :sequenced_email)
+    @unauthorized_user = create(:user, :sequenced_email)
+    @topic = create(:topic)
+    @post = create(:post, user_id: @user.id, topic_id: @topic.id)
+    @comment = create(:comment, post_id: @post.id)
   end
 
   describe "render index" do

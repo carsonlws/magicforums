@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe TopicsController, type: :controller do
 
   before(:all) do
-    @admin = User.create({username: "Admin", email: "carson1@gmail.com", password: "password", role: "admin"})
-    @user = User.create({username: "User", email: "user@gmail.com", password: "password", role: "user"})
+    @admin = create(:user, :admin)
+    @user = create(:user, :sequenced_email)
     @topic = create (:topic)
   end
 
