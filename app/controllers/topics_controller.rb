@@ -14,6 +14,7 @@ class TopicsController < ApplicationController
 
   def create
     @topic = current_user.topics.build(topic_params)
+    authorize @topic
 
     if @topic.save
       flash[:success] = "You've created a new topic."
@@ -31,6 +32,7 @@ class TopicsController < ApplicationController
 
   def update
     @topic = Topic.friendly.find(params[:id])
+    authorize @topic
     flash[:success] = "You've edited a topic."
     if @topic.update(topic_params)
       redirect_to topics_path(@topic)
@@ -42,6 +44,7 @@ class TopicsController < ApplicationController
   def destroy
     @topic = Topic.friendly.find(params[:id])
     authorize @topic
+    flash[:success] = "You've deleted a topic."
     if @topic.destroy
       redirect_to topics_path
     else

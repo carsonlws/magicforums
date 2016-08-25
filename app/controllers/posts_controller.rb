@@ -36,6 +36,7 @@ class PostsController < ApplicationController
   def update
     @topic = Topic.friendly.find(params[:topic_id])
     @post = Post.friendly.find(params[:id])
+    authorize @post
 
     if @post.update(post_params)
       redirect_to topic_posts_path(@topic)

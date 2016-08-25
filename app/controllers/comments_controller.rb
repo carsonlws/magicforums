@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   respond_to :js
-  before_action :authenticate!, only: [:index]
+  before_action :authenticate!, only: [:create, :edit, :update, :destroy]
 
   def index
     @post = Post.includes(:comments).friendly.find(params[:post_id])
@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @post = Post.find_by(slug: params[:post_id])
+    @post = Post.friendly.find(params[:post_id])
     @topic = @post.topic
     @comment = current_user.comments.build(comment_params.merge(post_id: @post.id))
     @new_comment = Comment.new
